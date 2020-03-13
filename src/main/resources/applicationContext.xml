@@ -31,6 +31,8 @@
                 <ref bean="reggaeMusic"/>
             </list>
         </property>
+        <property name="playerName" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
 
