@@ -1,17 +1,34 @@
 package com.springlessons.lesson1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
 
-    private Music music;
-    private String name;
+    private List<Music> musicList = new ArrayList<Music>();
+    private String playerName;
     private int volume;
 
-    public String getName() {
-        return name;
+    void playMusicList() {
+        for (Music music : musicList) {
+            System.out.println(music.getSong());
+        }
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public List<Music> getMusicList() {
+        return musicList;
+    }
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 
     public int getVolume() {
@@ -20,13 +37,5 @@ public class MusicPlayer {
 
     public void setVolume(int volume) {
         this.volume = volume;
-    }
-
-    public MusicPlayer(Music music) {
-        this.music = music;
-    }
-
-    public void playSong() {
-        System.out.println(music.getSong());
     }
 }
