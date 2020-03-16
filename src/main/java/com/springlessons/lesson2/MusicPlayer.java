@@ -1,24 +1,34 @@
 package com.springlessons.lesson2;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class MusicPlayer {
-    private Music music1;
-    private Music music2;
+    private ClassicMusic classicMusic;
+    private RockMusic rockMusic;
 
     @Autowired
-    public MusicPlayer(@Qualifier("rockMusic") Music music1, @Qualifier("classicMusic") Music music2) {
-        this.music1 = music1;
-        this.music2 = music2;
+    public MusicPlayer(ClassicMusic classicMusic, RockMusic rockMusic) {
+        this.classicMusic = classicMusic;
+        this.rockMusic = rockMusic;
     }
 
-    String playMusic() {
-        return "Now playing: " + music1.getSong() + ", " + music2.getSong();
-//        System.out.println("Now playing: " + rockMusic.getSong());
-
+    private String getSong(List<String> musicList) {
+        int randomSong = (int) (Math.random() * 3);
+        return musicList.get(randomSong);
     }
 
+    public void playMusic(EnumClass enumObject) {
+        List<String> musicList;
+        if (enumObject.equals(EnumClass.CLASSICAL)) {
+            musicList = classicMusic.getSong();
+            System.out.println(getSong(musicList));
+        } else {
+            musicList = rockMusic.getSong();
+            System.out.println(getSong(musicList));
+        }
+    }
 }
