@@ -22,7 +22,8 @@
           class="com.springlessons.lesson1.ReggaeMusic"/>
 
     <bean id="musicPlayer"
-          class="com.springlessons.lesson1.MusicPlayer">
+          class="com.springlessons.lesson1.MusicPlayer"
+          scope="prototype">
         <property name="musicList">
             <list>
                 <ref bean="classicMusic"/>
