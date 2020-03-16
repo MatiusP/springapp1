@@ -1,4 +1,4 @@
-package com.springlessons.lesson1;
+package com.springlessons.lesson2;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -8,9 +8,6 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         MusicPlayer player = context.getBean("musicPlayer", MusicPlayer.class);
 
-        player.playMusicList();
-        System.out.println(player.getPlayerName());
-        System.out.println(player.getVolume());
-
+        player.playMusic();
     }
 }
