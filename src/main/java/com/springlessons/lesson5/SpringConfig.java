@@ -36,6 +36,4 @@ public class SpringConfig {
     public MusicPlayer musicPlayerBean() {
         return new MusicPlayer(listMusicBean());
     }
-
-
 }

@@ -30,11 +30,11 @@ public class MusicPlayer {
         System.out.println(musicList.get(randomMusic()).getSong());
     }
 
-    public String getPlayerName() {
+    String getPlayerName() {
         return playerName;
     }
 
-    public int getVolume() {
+    int getVolume() {
         return volume;
     }
 }
