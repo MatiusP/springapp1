@@ -1,9 +1,17 @@
 package com.springlessons.lesson5;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import java.util.List;
 
 public class MusicPlayer {
     private List<Music> musicList;
+
+    @Value("${musicPlayer.playerName}")
+    private String playerName;
+
+    @Value("${musicPlayer.volume}")
+    private int volume;
 
     public MusicPlayer(List<Music> musicList) {
         this.musicList = musicList;
@@ -20,5 +28,13 @@ public class MusicPlayer {
 
     void playMusic(){
         System.out.println(musicList.get(randomMusic()).getSong());
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public int getVolume() {
+        return volume;
     }
 }

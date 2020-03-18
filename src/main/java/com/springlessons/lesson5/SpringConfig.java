@@ -2,14 +2,14 @@ package com.springlessons.lesson5;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-//import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySource;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @SuppressWarnings("ALL")
 @Configuration
-//@PropertySource("musicPlayer.properties")
+@PropertySource("musicPlayer.properties")
 public class SpringConfig {
 
     @Bean
@@ -29,11 +29,7 @@ public class SpringConfig {
 
     @Bean
     public List<Music> listMusicBean() {
-        List<Music> musicList = new ArrayList<Music>();
-        musicList.add(classicMusicBean());
-        musicList.add(rockMusicBean());
-        musicList.add(popMusicBean());
-        return musicList;
+        return Arrays.asList(classicMusicBean(), rockMusicBean(), popMusicBean());
     }
 
     @Bean
