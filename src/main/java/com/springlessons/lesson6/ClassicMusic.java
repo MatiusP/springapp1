@@ -18,4 +18,8 @@ public class ClassicMusic implements Music {
     public String getSong() {
         return "Mozart";
     }
+
+    public void getOuthor(){
+        System.out.println("Vivaldi");
+    }
 }
