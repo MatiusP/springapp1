@@ -37,4 +37,8 @@ public class MusicPlayer {
     int getVolume() {
         return volume;
     }
+
+    public void getOuthor(){
+        System.out.println("Vivaldi");
+    }
 }
