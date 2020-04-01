@@ -41,4 +41,8 @@ public class MusicPlayer {
     public void getOuthor(){
         System.out.println("Vivaldi");
     }
+
+    public int getNumber(){
+        return 0;
+    }
 }
